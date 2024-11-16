@@ -1,4 +1,4 @@
-# software-architecture
+# Software architecture
 
 *The purpose of this project is to understand the knowledge point of software architecture through concrete project simulation.*
 
