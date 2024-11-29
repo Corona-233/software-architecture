@@ -1,5 +1,5 @@
 # Software architecture
 
-*The purpose of this project is to understand the knowledge point of software architecture through concrete project simulation.*
+*This project is for educational and communication purposes only.*
 
-*本项目旨在通过具体项目模拟来理解软件体系结构的知识点。*
+*本项目仅供交流学习使用。*
