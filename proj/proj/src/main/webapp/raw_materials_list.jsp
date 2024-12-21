@@ -1,5 +1,3 @@
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="static java.lang.foreign.MemorySegment.NULL" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -16,7 +14,7 @@
         <div id="logo">
             <h1>菜单</h1>
         </div>
-        <div id="menu">
+        <div id="menu" >
             <ul>
                 <li class="current_page_item"><a href="#">原材料清单</a></li>
                 <li><a href="#">车辆列表</a></li>
@@ -27,7 +25,7 @@
             </ul>
         </div>
     </div>
-    <div id="main">
+    <div id="main" >
         <div class="top">
             <h2>原材料清单</h2>
             <hr/>
@@ -40,7 +38,7 @@
             </div>
         </div>
         <div class="table">
-            <table id="table" width="800" frame="box" align="center">
+            <table id="table">
                 <tr>
                     <th height="35">日期</th>
                     <th>单号</th>

@@ -43,8 +43,8 @@
 	{
 		position: relative;
 		float: left;
-		width: 300px;
-		padding: 3em 0 1em;
+		width: 12%;
+		padding: 1em 0 1em;
 	}
 
 /*********************************************************************************/
@@ -58,15 +58,6 @@
 		margin-bottom: 4em;
 	}
 
-    #logo img
-    {
-        width: 140px;
-        height: 140px;
-        display: inline-block;
-        margin-bottom: 1em;
-        border-radius: 50%;
-    }
-	
 	#logo h1
 	{
 		display: block;
@@ -96,6 +87,8 @@
 	{
 		background: #2980b9;
 		color: rgba(255,255,255,1);
+		border-top-right-radius: 10px; /* 设置右上角的圆角 */
+		border-bottom-right-radius: 10px; /* 设置右下角的圆角 */
 	}
 
 /*********************************************************************************/
@@ -116,10 +109,16 @@
         height: 675px;
 		overflow: hidden;
 		float: right;
-		width: 800px;
+		width: 78%;
 		padding: 2em 50px 1em 50px;
 		background: #f9f9f9;
 		border-top: 6px solid #2980b9;
+		text-align: center;
+	}
+
+	#main table
+	{
+		width:100%;
 		text-align: center;
 	}
 
@@ -131,6 +130,8 @@
         margin-top: 110px;
         height: 433px;
     }
+
+
 
     .btn-add{
         width: 100px;
