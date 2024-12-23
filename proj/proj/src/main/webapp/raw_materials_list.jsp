@@ -51,9 +51,8 @@
                 </tr>
                 <tr>
                     <form method="post" action="../update_student">
-                        <td height="35"></td>
-                        <td><input value="" name="stuname" class="table-input"></td>
-                        <td><input value="" name="stusex" class="table-input"></td>
+                        <td><input value="" name="stusex" class="table-input" style="width: 80px"></td>
+                        <td><input value="" name="stusex" class="table-input" style="width: 80px"></td>
                         <td><input value="" name="stusex" class="table-input" style="width: 80px"></td>
                         <td><input value="" name="stusex" class="table-input" style="width: 80px"></td>
                         <td><input value="" name="stusex" class="table-input" style="width: 80px"></td>
