@@ -123,12 +123,14 @@
 	}
 
     .top{
-        width: 800px;
+        width: 100%;
     }
 
     .table{
         margin-top: 110px;
         height: 433px;
+		border: 1px solid black;
+		padding: 5px;
     }
 
 
@@ -138,6 +140,7 @@
         height: 38px;
         float: left;
         margin-top: 30px;
+		margin-left: 60px;
     }
 
     .find{
@@ -151,11 +154,12 @@
     }
 
     .find-btn{
+		margin-right: 60px;
         height: 30px;
     }
 
 	.table-input{
-        width: 40px;
+        width: 80px;
         text-align: center;
         border-top: none;
 		border-left: none;
@@ -203,4 +207,46 @@
 	
 	#index{
         margin-top: 20px;
+	}
+
+	/* 弹出框的基本样式 */
+	#add-dialog {
+		position: relative;
+		padding: 20px;
+	}
+
+	/* 表单输入框的样式 */
+	.form-control {
+		width: calc(100% - 20px);
+		padding: 8px;
+		margin-bottom: 10px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+
+	/* 操作按钮的样式 */
+	.btn {
+		float: right;
+		padding: 8px 16px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	.btn-secondary {
+		background-color: #6c757d;
+		color: white;
+	}
+
+	.btn-primary {
+		background-color: #007bff;
+		color: white;
+		margin-right: 10px;
+	}
+
+	/* 清除浮动 */
+	#add-dialog::after {
+		content: "";
+		display: table;
+		clear: both;
 	}

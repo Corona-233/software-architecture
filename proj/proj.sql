@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 23/12/2024 21:57:45
+ Date: 24/12/2024 23:48:18
 */
 
 SET NAMES utf8mb4;
@@ -75,7 +75,34 @@ CREATE TABLE `raw_materials_list`  (
   `specifications` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `supplier` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of raw_materials_list
+-- ----------------------------
+INSERT INTO `raw_materials_list` VALUES (1, '2024-12-20', 'CT20241220001', '普通硅酸盐水泥', '500', '沪A12345', '强度等级42.5R', '上海建材有限公司');
+INSERT INTO `raw_materials_list` VALUES (2, '2024-12-21', 'CT20241221002', '河砂（细骨料）', '600', '苏B67890', '粒径0.15-5mm', '江苏沙石供应站');
+INSERT INTO `raw_materials_list` VALUES (7, '2024-12-24', '2', '2', '2', '2', '2', '2');
+
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`  (
+  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `roleId` int(0) DEFAULT NULL,
+  `commit` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES (1, '超级管理员', 1, '所有页面都能看');
+INSERT INTO `users` VALUES (2, '监管人员', 2, '原材料清单、出料单、驾驶人员、路线');
+INSERT INTO `users` VALUES (3, '实验员', 3, '查出料单、提供报告');
+INSERT INTO `users` VALUES (4, '验收人员', 4, '验收出料单');
 
 -- ----------------------------
 -- Table structure for vehicle_list
