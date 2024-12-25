@@ -21,7 +21,7 @@ import java.io.*;
 public class UsersServlet extends HttpServlet {
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/proj";
     private static final String JDBC_USER = "root";
-    private static final String JDBC_PASSWORD = "root";
+    private static final String JDBC_PASSWORD = "123456";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int userId = Integer.parseInt(request.getParameter("roleId"));  // 假设通过 ID 登录

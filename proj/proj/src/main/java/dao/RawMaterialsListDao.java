@@ -20,7 +20,7 @@ public class RawMaterialsListDao {
         // 数据库连接参数
         String JDBCURL = "jdbc:mysql://localhost:3306/proj?useUnicode=true&characterEncoding=UTF-8";
         String JDBCUSERNAME = "root";
-        String JDBCPASSWORD = "root";
+        String JDBCPASSWORD = "123456";
         return DriverManager.getConnection(JDBCURL, JDBCUSERNAME, JDBCPASSWORD);
     }
 
