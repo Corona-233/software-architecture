@@ -22,7 +22,7 @@
         <li><a href="RawMaterialsListServletSearch">原材料清单</a></li>
         <li><a href="VehicleListServletSearch">车辆列表</a></li>
         <li><a href="#">驾驶员列表</a></li>
-        <li><a href="#">混凝土出料单</a></li>
+        <li><a href="DeliveryOrderServletSearch">混凝土出料单</a></li>
       </ul>
     </div>
   </div>
