@@ -31,16 +31,16 @@ public class RawMaterialsListDao {
              PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
-               int id = rs.getInt("id");
-               String date = rs.getString("date");
-               String odernum = rs.getString("odernum");
-               String name = rs.getString("name");
-               String weight = rs.getString("weight");
-               String vehicle_num = rs.getString("vehicle_num");
-               String specifications = rs.getString("specifications");
-               String supplier = rs.getString("supplier");
-               RawMaterialsList rawMaterialsList=new RawMaterialsList(id, date, odernum, name,  weight,vehicle_num, specifications, supplier);
-               rawMaterialsLists.add(rawMaterialsList);
+                int id = rs.getInt("id");
+                String date = rs.getString("date");
+                String odernum = rs.getString("odernum");
+                String name = rs.getString("name");
+                String weight = rs.getString("weight");
+                String vehicle_num = rs.getString("vehicle_num");
+                String specifications = rs.getString("specifications");
+                String supplier = rs.getString("supplier");
+                RawMaterialsList rawMaterialsList = new RawMaterialsList(id, date, odernum, name, weight, vehicle_num, specifications, supplier);
+                rawMaterialsLists.add(rawMaterialsList);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -52,10 +52,10 @@ public class RawMaterialsListDao {
     public void deleteRawMaterialsList(int id) {
         String sql = "delete from raw_materials_list where id = ?";
         try (Connection conn = getConnection();
-        PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, id);
             pstmt.executeUpdate();
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -71,8 +71,8 @@ public class RawMaterialsListDao {
         String supplier = rawMaterialsList.getSupplier();
 
         String sql = "update raw_materials_list set date=? , odernum=? ,name=? , weight=? , vehicle_num=? , specifications=?  , supplier=? where id=?";
-        try(Connection conn = getConnection();
-            PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, date);
             pstmt.setString(2, odernum);
             pstmt.setString(3, name);
@@ -82,16 +82,16 @@ public class RawMaterialsListDao {
             pstmt.setString(7, supplier);
             pstmt.setInt(8, id);
             pstmt.executeUpdate();
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void addRawMaterialsList(String date,String odernum,String name,String weight,String vehicle_num,String specifications,String supplier) {
+    public void addRawMaterialsList(String date, String odernum, String name, String weight, String vehicle_num, String specifications, String supplier) {
         String sql = "insert into raw_materials_list( date, odernum, name, weight, vehicle_num, specifications, supplier) values(?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)){
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, date);
             pstmt.setString(2, odernum);
             pstmt.setString(3, name);
@@ -100,8 +100,34 @@ public class RawMaterialsListDao {
             pstmt.setString(6, specifications);
             pstmt.setString(7, supplier);
             pstmt.executeUpdate();
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<RawMaterialsList> getkeyRawMaterialsList(String key) {
+        List<RawMaterialsList> rawMaterialsLists = new ArrayList<>();
+        String sql = "select * from raw_materials_list where odernum like ?";
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);) {
+            pstmt.setString(1, "%" + key + "%");
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String date = rs.getString("date");
+                String odernum = rs.getString("odernum");
+                String name = rs.getString("name");
+                String weight = rs.getString("weight");
+                String vehicle_num = rs.getString("vehicle_num");
+                String specifications = rs.getString("specifications");
+                String supplier = rs.getString("supplier");
+                RawMaterialsList rawMaterialsList = new RawMaterialsList(id, date, odernum, name, weight, vehicle_num, specifications, supplier);
+                rawMaterialsLists.add(rawMaterialsList);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return rawMaterialsLists;
     }
 }

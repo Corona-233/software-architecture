@@ -49,6 +49,8 @@ public class UsersServlet extends HttpServlet {
             return "role2/index.jsp";  // 权限2对应 role2 目录
         } else if (roleId == 3) {
             return "role3/index.jsp";  // 权限3对应 role3 目录
+        } else if (roleId == 4) {
+            return "role4/index.jsp";  // 权限3对应 role3 目录
         }
         return "login.jsp";  // 默认跳转到登录页面
     }

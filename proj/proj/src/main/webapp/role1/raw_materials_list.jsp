@@ -41,7 +41,7 @@
             <button class="btn-add">新建</button>
             <div class="find">
                 <form action="RawMaterialsListServletSearch" method="post">
-                    <input id="find-text" type="text" name="key" placeholder="搜索">
+                    <input id="find-text" type="text" name="key" placeholder="输入单号查询">
                     <input class="find-btn" type="submit" value="搜索">
                 </form>
             </div>
