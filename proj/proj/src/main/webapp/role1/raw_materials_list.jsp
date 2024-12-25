@@ -61,7 +61,7 @@
                 </tr>
                 <% for (RawMaterialsList rawMaterialsList : rawMaterialsLists) { %>
                 <tr>
-                    <form method="post" action="${pageContext.request.contextPath}/RawMaterialsListServletUpdate">
+                    <form method="post" action="RawMaterialsListServletUpdate">
                         <td><input value="<%=rawMaterialsList.getId()%>" name="id" hidden="hidden"></td>
                         <td><input value="<%=rawMaterialsList.getDate()%>" name="date" class="table-input"></td>
                         <td><input value="<%=rawMaterialsList.getOdernum()%>" name="odernum" class="table-input" style="width: 100px"></td>
