@@ -1,9 +1,6 @@
-package servlet.DeliveryOrderServlet;
-
+package servlet.AcceptanceServlet;
 import dao.DeliveryOrderDao;
-import dao.RawMaterialsListDao;
 import entity.DeliveryOrder;
-import entity.RawMaterialsList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,8 +12,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("/role1/DeliveryOrderServletSearch")
-public class DeliveryOrderServletSearch extends HttpServlet {
+@WebServlet("/role1/experimentshow")
+public class ExperimentUI extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doGet(request, response);
     }
@@ -36,7 +33,6 @@ public class DeliveryOrderServletSearch extends HttpServlet {
                 throw new RuntimeException(e);
             }
 
-
         } else {
             try {
                 deliveryOrders=dao.getKeyDeliveryOrder(key);
@@ -44,9 +40,9 @@ public class DeliveryOrderServletSearch extends HttpServlet {
                 throw new RuntimeException(e);
             }
         }
-        request.setAttribute("deliveryOrders", deliveryOrders);
+        request.setAttribute("Experiment", deliveryOrders);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("delivery_order.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("Experimenter.jsp");
         dispatcher.forward(request,response);
     }
 }
