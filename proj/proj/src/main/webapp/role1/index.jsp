@@ -20,9 +20,12 @@
       <ul>
         <li class="current_page_item"><a href="index.jsp">主页</a></li>
         <li><a href="RawMaterialsListServletSearch">原材料清单</a></li>
-        <li><a href="VehicleListServletSearch">车辆列表</a></li>
-        <li><a href="#">驾驶员列表</a></li>
         <li><a href="DeliveryOrderServletSearch">混凝土出料单</a></li>
+        <li><a href="#">驾驶员列表</a></li>
+        <li><a href="VehicleListServletSearch">车辆列表</a></li>
+        <li><a href="#">运输线路</a></li>
+        <li><a href="experimentshow">土工实验员界面</a></li>
+        <li><a href="acceptance">工地验收人员界面</a></li>
       </ul>
     </div>
   </div>

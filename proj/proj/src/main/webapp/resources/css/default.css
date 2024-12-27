@@ -71,16 +71,17 @@
 	{
 		border-top: 1px solid rgba(255,255,255,0.08);
 	}
-	
+
 	#menu li a
 	{
 		display: block;
-		padding: 2em 1.5em;
+		padding: 1.8em 1.5em;
 		text-align: center;
-		text-decoration:  none;
+		text-decoration: none;
 		text-transform: uppercase;
 		font-weight: 700;
-		color: rgba(255,255,255,0.5);
+		font-size: 13px;
+		color: rgba(255, 255, 255, 0.5);
 	}
 	
 	#menu .current_page_item a

@@ -19,7 +19,7 @@ public class DeliveryOrderDao {
         // 数据库连接参数
         String JDBCURL = "jdbc:mysql://localhost:3306/proj?useUnicode=true&characterEncoding=UTF-8";
         String JDBCUSERNAME = "root";
-        String JDBCPASSWORD = "123456";
+        String JDBCPASSWORD = "lifaqi666";
         return DriverManager.getConnection(JDBCURL, JDBCUSERNAME, JDBCPASSWORD);
     }
 
@@ -151,6 +151,61 @@ public class DeliveryOrderDao {
             pstmt.executeUpdate();
         }catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void checkout(int id) throws SQLException {
+        String sql ="update delivery_order set is_checkout=1 where id=?";
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // 设置参数
+            pstmt.setInt(1, id);
+            // 执行更新操作
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("成功更新了 " + rowsAffected + " 行");
+            } else {
+                System.out.println("没有找到对应的记录进行更新");
+            }
+        } catch (SQLException e) {
+            // 抛出异常给调用者处理或在这里处理异常
+            throw e;
+        }
+    }
+    public void checkout2(int id) throws SQLException {
+        String sql ="update delivery_order set is_checkout=-1 where id=?";
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // 设置参数
+            pstmt.setInt(1, id);
+            // 执行更新操作
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("成功更新了 " + rowsAffected + " 行");
+            } else {
+                System.out.println("没有找到对应的记录进行更新");
+            }
+        } catch (SQLException e) {
+            // 抛出异常给调用者处理或在这里处理异常
+            throw e;
+        }
+    }
+    public void accept(int id) throws SQLException {
+        String sql ="update delivery_order set is_accept=1 where id=?";
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // 设置参数
+            pstmt.setInt(1, id);
+            // 执行更新操作
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("成功更新了 " + rowsAffected + " 行");
+            } else {
+                System.out.println("没有找到对应的记录进行更新");
+            }
+        } catch (SQLException e) {
+            // 抛出异常给调用者处理或在这里处理异常
+            throw e;
         }
     }
 }
