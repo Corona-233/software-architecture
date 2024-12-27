@@ -43,8 +43,8 @@
 	{
 		position: relative;
 		float: left;
-		width: 300px;
-		padding: 3em 0 1em;
+		width: 12%;
+		padding: 1em 0 1em;
 	}
 
 /*********************************************************************************/
@@ -58,15 +58,6 @@
 		margin-bottom: 4em;
 	}
 
-    #logo img
-    {
-        width: 140px;
-        height: 140px;
-        display: inline-block;
-        margin-bottom: 1em;
-        border-radius: 50%;
-    }
-	
 	#logo h1
 	{
 		display: block;
@@ -80,22 +71,25 @@
 	{
 		border-top: 1px solid rgba(255,255,255,0.08);
 	}
-	
+
 	#menu li a
 	{
 		display: block;
-		padding: 2em 1.5em;
+		padding: 1.8em 1.5em;
 		text-align: center;
-		text-decoration:  none;
+		text-decoration: none;
 		text-transform: uppercase;
 		font-weight: 700;
-		color: rgba(255,255,255,0.5);
+		font-size: 13px;
+		color: rgba(255, 255, 255, 0.5);
 	}
 	
 	#menu .current_page_item a
 	{
 		background: #2980b9;
 		color: rgba(255,255,255,1);
+		border-top-right-radius: 10px; /* 设置右上角的圆角 */
+		border-bottom-right-radius: 10px; /* 设置右下角的圆角 */
 	}
 
 /*********************************************************************************/
@@ -116,27 +110,38 @@
         height: 675px;
 		overflow: hidden;
 		float: right;
-		width: 800px;
+		width: 78%;
 		padding: 2em 50px 1em 50px;
 		background: #f9f9f9;
 		border-top: 6px solid #2980b9;
 		text-align: center;
 	}
 
+	#main table
+	{
+		width:100%;
+		text-align: center;
+	}
+
     .top{
-        width: 800px;
+        width: 100%;
     }
 
     .table{
         margin-top: 110px;
         height: 433px;
+		border: 1px solid black;
+		padding: 5px;
     }
+
+
 
     .btn-add{
         width: 100px;
         height: 38px;
         float: left;
         margin-top: 30px;
+		margin-left: 60px;
     }
 
     .find{
@@ -150,11 +155,12 @@
     }
 
     .find-btn{
+		margin-right: 60px;
         height: 30px;
     }
 
 	.table-input{
-        width: 40px;
+        width: 80px;
         text-align: center;
         border-top: none;
 		border-left: none;
@@ -202,4 +208,46 @@
 	
 	#index{
         margin-top: 20px;
+	}
+
+	/* 弹出框的基本样式 */
+	#add-dialog {
+		position: relative;
+		padding: 20px;
+	}
+
+	/* 表单输入框的样式 */
+	.form-control {
+		width: calc(100% - 20px);
+		padding: 8px;
+		margin-bottom: 10px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+
+	/* 操作按钮的样式 */
+	.btn {
+		float: right;
+		padding: 8px 16px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	.btn-secondary {
+		background-color: #6c757d;
+		color: white;
+	}
+
+	.btn-primary {
+		background-color: #007bff;
+		color: white;
+		margin-right: 10px;
+	}
+
+	/* 清除浮动 */
+	#add-dialog::after {
+		content: "";
+		display: table;
+		clear: both;
 	}
